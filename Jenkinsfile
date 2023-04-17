@@ -3,9 +3,21 @@ pipeline {
   stages {
     stage('install maven') {
       steps {
-        sh 'sudo apt-get install maven'
+        sh '''
+sudo su'''
+        sh 'echo ${password}'
+        sh 'apt-get install maven'
       }
     }
 
+    stage('') {
+      steps {
+        sh 'mvn build'
+      }
+    }
+
+  }
+  environment {
+    password = 'Rahul474.'
   }
 }
