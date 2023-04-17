@@ -1,23 +1,40 @@
-pipeline {
-  agent any
-  stages {
-    stage('install maven') {
-      steps {
-        sh '''
-sudo su'''
-        sh 'echo ${password}'
-        sh 'apt-get install maven'
-      }
+pipeline{
+    agent any
+    tools{
+        maven 'maven'
     }
-
-    stage('') {
-      steps {
-        sh 'mvn build'
-      }
+    stages{
+        stage("Test"){
+            steps{
+                sh "mvn --version"
+                echo "========executing A========"
+            }
+        }
+        stage("Test"){
+            steps{
+                echo "========executing A========"
+            }
+        }
+        stage("Test"){
+            steps{
+                echo "========executing A========"
+            }
+        }
+        stage("Test"){
+            steps{
+                echo "========executing A========"
+            }
+        }
     }
-
-  }
-  environment {
-    password = 'Rahul474.'
-  }
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
+    }
 }
