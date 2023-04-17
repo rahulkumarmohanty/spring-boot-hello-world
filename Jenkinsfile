@@ -12,6 +12,7 @@ pipeline{
         }
         stage("Test1"){
             steps{
+                sh "mvn --build"
                 echo "========executing A========"
             }
         }
