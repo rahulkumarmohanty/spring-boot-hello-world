@@ -6,13 +6,13 @@ pipeline{
     stages{
         stage("Test"){
             steps{
-                sh "mvn --version"
+                sh "mvn test"
                 echo "========executing A========"
             }
         }
         stage("Test1"){
             steps{
-                sh "mvn --build"
+                sh "mvn build"
                 echo "========executing build========"
             }
         }
