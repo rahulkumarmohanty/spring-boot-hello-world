@@ -6,18 +6,19 @@ pipeline{
     stages{
         stage("Test"){
             steps{
-                sh "mvn test"
+                sh "mvn clean"
                 echo "========executing A========"
             }
         }
         stage("Test1"){
             steps{
-                sh "mvn build"
+                sh "mvn test"
                 echo "========executing build========"
             }
         }
         stage("Test2"){
             steps{
+                sh "mvn package"
                 echo "========executing A========"
             }
         }
