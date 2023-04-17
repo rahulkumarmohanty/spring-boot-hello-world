@@ -10,17 +10,17 @@ pipeline{
                 echo "========executing A========"
             }
         }
-        stage("Test"){
+        stage("Test1"){
             steps{
                 echo "========executing A========"
             }
         }
-        stage("Test"){
+        stage("Test2"){
             steps{
                 echo "========executing A========"
             }
         }
-        stage("Test"){
+        stage("Test3"){
             steps{
                 echo "========executing A========"
             }
